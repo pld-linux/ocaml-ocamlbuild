@@ -61,6 +61,7 @@ install -p man/ocamlbuild.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
 # move to dir pld ocamlfind looks
 install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/%{module}
+export OCAMLFIND_DESTDIR=$RPM_BUILD_ROOT%{_libdir}/ocaml
 mv $OCAMLFIND_DESTDIR/%{module}/META \
 	$RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/%{module}
 cat <<EOF >> $RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/%{module}/META
@@ -98,3 +99,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/ocaml/ocamlbuild/*.cmxa
 %endif
 %{_libdir}/ocaml/ocamlbuild/*.mli
+%{_libdir}/ocaml/site-lib/%{module}
