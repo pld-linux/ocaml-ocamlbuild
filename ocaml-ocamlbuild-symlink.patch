@@ -1,0 +1,18 @@
+--- ocamlbuild-0.11.0/Makefile.orig	2017-03-05 23:48:09.000000000 +0100
++++ ocamlbuild-0.11.0/Makefile	2017-06-09 17:33:40.208846050 +0200
+@@ -247,13 +247,13 @@
+ 	mkdir -p $(INSTALL_BINDIR)
+ 	$(CP) ocamlbuild.byte $(INSTALL_BINDIR)/ocamlbuild.byte$(EXE)
+ ifneq ($(OCAML_NATIVE), true)
+-	$(CP) ocamlbuild.byte $(INSTALL_BINDIR)/ocamlbuild$(EXE)
++	ln -s ocamlbuild.byte$(EXE) $(INSTALL_BINDIR)/ocamlbuild$(EXE)
+ endif
+ 
+ install-bin-native:
+ 	mkdir -p $(INSTALL_BINDIR)
+-	$(CP) ocamlbuild.native $(INSTALL_BINDIR)/ocamlbuild$(EXE)
+ 	$(CP) ocamlbuild.native $(INSTALL_BINDIR)/ocamlbuild.native$(EXE)
++	ln -s ocamlbuild.native$(EXE) $(INSTALL_BINDIR)/ocamlbuild$(EXE)
+ 
+ ifeq ($(OCAML_NATIVE), true)
+ install-bin: install-bin-byte install-bin-native
