@@ -7,12 +7,16 @@
 %undefine	with_ocaml_opt
 %endif
 
+%if %{without ocaml_opt}
+%define		_enable_debug_packages	0
+%endif
+
 %define		module	ocamlbuild
 Summary:	Build tool for OCaml libraries and programs
 Summary(pl.UTF-8):	Narzędzie do budowania bibliotek i programów napisanych w OCamlu
 Name:		ocaml-%{module}
 Version:	0.14.0
-Release:	1
+Release:	2
 License:	LGPL v2+ with exceptions
 Group:		Development/Languages
 Source0:	https://github.com/ocaml/ocamlbuild/archive/%{version}/%{module}-%{version}.tar.gz
