@@ -11,12 +11,12 @@
 Summary:	Build tool for OCaml libraries and programs
 Summary(pl.UTF-8):	Narzędzie do budowania bibliotek i programów napisanych w OCamlu
 Name:		ocaml-%{module}
-Version:	0.11.0
-Release:	2
+Version:	0.14.0
+Release:	1
 License:	LGPL v2+ with exceptions
 Group:		Development/Languages
 Source0:	https://github.com/ocaml/ocamlbuild/archive/%{version}/%{module}-%{version}.tar.gz
-# Source0-md5:	e3b83c842f82ef909b6d2a2d2035f0fe
+# Source0-md5:	a7bf2fe594cd16907807c756b14d501f
 Patch0:		%{name}-symlink.patch
 URL:		https://github.com/ocaml/ocamlbuild
 BuildRequires:	ocaml >= 1:4.04.0
