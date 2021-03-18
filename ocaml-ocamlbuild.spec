@@ -102,5 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/ocaml/ocamlbuild/ocamlbuildlib.a
 %{_libdir}/ocaml/ocamlbuild/ocamlbuildlib.cmxa
 %endif
+%{_libdir}/ocaml/ocamlbuild/signatures.cmi
+%{_libdir}/ocaml/ocamlbuild/signatures.cmti
 %{_libdir}/ocaml/ocamlbuild/signatures.mli
 %{_libdir}/ocaml/site-lib/ocamlbuild
