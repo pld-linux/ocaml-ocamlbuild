@@ -7,9 +7,7 @@
 %undefine	with_ocaml_opt
 %endif
 
-%if %{without ocaml_opt}
 %define		_enable_debug_packages	0
-%endif
 
 %define		module	ocamlbuild
 Summary:	Build tool for OCaml libraries and programs
