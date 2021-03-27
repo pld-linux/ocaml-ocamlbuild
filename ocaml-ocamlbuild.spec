@@ -14,7 +14,7 @@ Summary:	Build tool for OCaml libraries and programs
 Summary(pl.UTF-8):	Narzędzie do budowania bibliotek i programów napisanych w OCamlu
 Name:		ocaml-%{module}
 Version:	0.14.0
-Release:	3
+Release:	4
 License:	LGPL v2+ with exceptions
 Group:		Development/Languages
 Source0:	https://github.com/ocaml/ocamlbuild/archive/%{version}/%{module}-%{version}.tar.gz
@@ -72,9 +72,6 @@ install -p man/ocamlbuild.1 $RPM_BUILD_ROOT%{_mandir}/man1
 cat <<EOF >> $RPM_BUILD_ROOT%{_libdir}/ocaml/%{module}/META
 directory="+%{module}"
 EOF
-install -d $RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/%{module}
-ln -sr $RPM_BUILD_ROOT%{_libdir}/ocaml/%{module}/META \
-	$RPM_BUILD_ROOT%{_libdir}/ocaml/site-lib/%{module}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -93,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/ocaml/ocamlbuild/ocamlbuild*.cmi
 %{_libdir}/ocaml/ocamlbuild/ocamlbuild.cmo
 %{_libdir}/ocaml/ocamlbuild/ocamlbuildlib.cma
-%{_libdir}/ocaml/site-lib/ocamlbuild
 
 %files devel
 %defattr(644,root,root,755)
