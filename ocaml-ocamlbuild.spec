@@ -3,7 +3,7 @@
 %bcond_without	ocaml_opt	# skip building native optimized binaries (bytecode is always built)
 
 # not yet available on x32 (ocaml 4.02.1), update when upstream will support it
-%ifnarch %{ix86} %{x8664} arm aarch64 ppc sparc sparcv9
+%ifnarch %{ix86} %{x8664} %{arm} aarch64 ppc sparc sparcv9
 %undefine	with_ocaml_opt
 %endif
 
@@ -17,6 +17,7 @@ Version:	0.14.0
 Release:	4
 License:	LGPL v2+ with exceptions
 Group:		Development/Languages
+#Source0Download: https://github.com/ocaml/ocamlbuild/releases
 Source0:	https://github.com/ocaml/ocamlbuild/archive/%{version}/%{module}-%{version}.tar.gz
 # Source0-md5:	a7bf2fe594cd16907807c756b14d501f
 Patch0:		%{name}-symlink.patch
